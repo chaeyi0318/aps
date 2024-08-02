@@ -22,11 +22,12 @@ tmp = [0] * n   # 정렬 결과 저장할 list
 # data의 원소 x를 가져와서  counts[x]에 개수 기록
 for x in data:
     counts[x] += 1
+print(counts)
 
 # 2단계 : 각 숫자까지의 누적 개수 구하기
 for i in range(1, 5):   # counts[0] ~ counts[4]까지 누적
     counts[i] += counts[i - 1]
-
+print(counts)
 # 3단계 : data의 맨 뒤부터 tmp에 정렬하기
 for i in range(n - 1, -1, -1):
     counts[data[i]] -= 1   # 누적 개수 1개 감소
