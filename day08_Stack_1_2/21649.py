@@ -1,6 +1,6 @@
 def DFS(s, V):
     visited = [0] * (V + 1)
-    result = []
+    result = [s]
     stack = []
     result = [s]
     visited[s] = 1
