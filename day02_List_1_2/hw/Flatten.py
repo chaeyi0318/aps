@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt')
+sys.stdin = open('Flatten_input.txt')
 
 T = 10
 

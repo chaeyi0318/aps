@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('11092_input.txt')
+sys.stdin = open('최대_최소의_간격_input.txt')
 
 T = int(input())
 
