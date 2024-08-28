@@ -1,19 +1,13 @@
 N = int(input())
-card = list(map(int, input().split()))
-M = int(input())
-number = list(map(int, input().split()))
 
-card.sort()
+result = 0
 
-start = len(card) // 2
+for i in range(1, N + 1):
+    sum_value = sum(map(int, str(i)))
+    tmp = i + sum_value
 
+    if tmp == N:
+        result = i
+        break
 
-
-# for i in range(M):
-#     cnt = 0
-#
-#     for j in range(N):
-#         if m_arr[i] == n_arr[j]:
-#             cnt += 1
-#
-#     print(cnt, end=' ')
+print(result)
