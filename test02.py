@@ -1,35 +1,18 @@
-import sys
-sys.stdin = open('test02_input.txt')
+from collections import deque
 
-T = int(input())
+T = int(input())  # 테스트 케이스
 
-for t in range(1, T + 1):
-    N = int(input())
-    arr = list(map(int, input().split()))
-    tmp_list = [arr[0]]
-    result_list = []
+for _ in range(T):
+    N, M = map(int, input().split())  # N : 문서 개수 / M : 현재 궁금한 문서의 idx
 
-    for i in range(1, len(arr)):
-        if arr[i] < arr[i - 1]:
-            result_list.append(tmp_list)
-            tmp_list = []
-        tmp_list.append(arr[i])
-    result_list.append(tmp_list)
+    tmp = list(map(int, input().split()))
+    queue = deque((i, tmp[i]) for i in range(N))        # (인덱스, 중요도)
+    cnt = 0
+    print(max(queue))
+    # while True:
+    #     if queue.popleft()[1] < max(queue[1])
+    # print(queue.popleft())
 
-    # min_value = result_list[0][0]
-    # max_value = result_list[0][0]
-    # answer = None
-    #
-    # for i in range(len(result_list)):
-    #     min_value = None
-    #     max_value = None
-    #     for j in range(len(result_list[i])):
-    #         if result_list[i][j] > max_value:
-    #             max_value = result_list[i][j]
-    #         if result_list[i][j] < min_value:
-    #             min_value = result_list[i][j]
-    #
-    #     answer = (max_value - min_value) // len(result_list[i])
-    #     # answer = (max_value + min_value) / len(arr[i][j])
-    # print(answer)
-    # print(max_value, min_value)
+    # deque([(0, 5)])
+    # deque([(0, 1), (1, 2), (2, 3), (3, 4)])
+    # deque([(0, 1), (1, 1), (2, 9), (3, 1), (4, 1), (5, 1)])
