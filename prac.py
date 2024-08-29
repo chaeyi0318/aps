@@ -1,13 +1,5 @@
-N = int(input())
+import sys
+sys.stdin = open('prac_input.txt')
 
-result = 0
-
-for i in range(1, N + 1):
-    sum_value = sum(map(int, str(i)))
-    tmp = i + sum_value
-
-    if tmp == N:
-        result = i
-        break
-
-print(result)
+# V : 정점 개수 / E : 간선 수
+V, E = map(int, input().split())

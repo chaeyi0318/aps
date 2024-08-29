@@ -4,16 +4,16 @@ sys.stdin = open('input.txt')
 
 
 def cal(left, right, oper):
-    # if oper == '+':
-    #     return left + right
-    # elif oper == '-':
-    #     return left - right
-    # elif oper == '*':
-    #     return left * right
-    # elif oper == '/':
-    #     return left // right
+    if oper == '+':
+        return left + right
+    elif oper == '-':
+        return left - right
+    elif oper == '*':
+        return left * right
+    elif oper == '/':
+        return left // right
 
-    return eval(f'{left} {oper} {right}')
+    # return eval(f'{left} {oper} {right}')
 
 
 # 후위순회 만들기
